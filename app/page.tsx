@@ -12,7 +12,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 uppercase tracking-wider">
             Chemical Shed
           </h1>
-          <p className="text-gray-400 text-lg">Craigmore Farming - Sistema de Emergencias</p>
+          <p className="text-gray-400 text-lg">Craigmore Farming - Emergency Response System</p>
         </div>
 
         {/* Botones de selección */}
@@ -27,7 +27,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold text-white mb-2 uppercase">Chemical Shed</h2>
                 <p className="text-red-100 text-sm mb-4">Judco & Patutahi</p>
                 <div className="flex items-center justify-center gap-2 text-white text-sm">
-                  <span>Acceder al inventario</span>
+                  <span>Access Inventory</span>
                   <i className="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </div>
               </div>
@@ -44,7 +44,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold text-white mb-2 uppercase">Fertilizer Shed</h2>
                 <p className="text-green-100 text-sm mb-4">Judco & Patutahi</p>
                 <div className="flex items-center justify-center gap-2 text-white text-sm">
-                  <span>Acceder al inventario</span>
+                  <span>Access Inventory</span>
                   <i className="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </div>
               </div>
@@ -61,13 +61,13 @@ export default function Home() {
               </div>
             </div>
             <div className="flex-1">
-              <h3 className="text-white font-bold text-lg mb-2">En caso de emergencia</h3>
+              <h3 className="text-white font-bold text-lg mb-2">In Case of Emergency</h3>
               <p className="text-gray-400 text-sm mb-3">
-                Llame inmediatamente al 111 y proporcione información sobre los químicos desde el inventario
+                Call 111 immediately and provide chemical information from the inventory
               </p>
               <a href="tel:111" className="inline-flex items-center gap-2 bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition">
                 <i className="fas fa-phone-alt"></i>
-                <span>Llamar 111</span>
+                <span>Call 111</span>
               </a>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function Home() {
 
         {/* Footer */}
         <div className="text-center mt-8 text-gray-500 text-xs">
-          <p>Desarrollado by <span className="text-blue-400 font-semibold">BarviciiCorp</span></p>
+          <p>Developed by <span className="text-blue-400 font-semibold">BarviciiCorp</span></p>
         </div>
       </div>
     </div>

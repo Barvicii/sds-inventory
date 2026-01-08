@@ -10,7 +10,7 @@ export default function FertilizerPage() {
     <>
       <Header 
         title="Fertilizer Shed" 
-        subtitle="Fertilizantes - Judco & Patutahi"
+        subtitle="Fertilisers - Judco & Patutahi"
         showBackButton={true}
       />
       <InventoryList 

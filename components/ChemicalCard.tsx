@@ -47,7 +47,7 @@ export default function ChemicalCard({ chemical }: ChemicalCardProps) {
                 : 'bg-orange-50 border-orange-300 text-orange-900'
             }`}>
               <i className="fas fa-exclamation-triangle mr-2"></i>
-              <span className="uppercase tracking-wide">Clasificación:</span> {chemical.HazardClasses}
+              <span className="uppercase tracking-wide">Classification:</span> {chemical.HazardClasses}
             </div>
           </div>
         )}
@@ -74,7 +74,7 @@ export default function ChemicalCard({ chemical }: ChemicalCardProps) {
       <div className={`hidden md:block mx-8 text-center min-w-[100px] px-4 py-3 rounded-lg border-2 ${style.quantityBg}`}>
         <p className="text-xs text-gray-500 uppercase font-bold mb-1">
           {isHighRisk && <i className="fas fa-exclamation-triangle text-red-600 mr-1"></i>}
-          Cantidad
+          Quantity
         </p>
         <p className={`font-mono text-gray-800 ${isHighRisk ? 'text-2xl font-extrabold text-red-900' : 'text-xl font-bold'}`}>
           {chemical.Cantidad}

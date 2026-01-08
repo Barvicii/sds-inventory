@@ -112,7 +112,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Buscar químico..."
+              placeholder="Search chemical..."
               className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 text-lg"
             />
           </div>
@@ -127,7 +127,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
                   : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
               }`}
             >
-              Todos
+              All
             </button>
             <button
               onClick={() => setDangerFilter('high')}
@@ -137,7 +137,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
                   : 'bg-red-100 hover:bg-red-200 text-red-800'
               }`}
             >
-              <i className="fas fa-exclamation-triangle"></i> Alto Riesgo
+              <i className="fas fa-exclamation-triangle"></i> High Risk
             </button>
             <button
               onClick={() => setDangerFilter('medium')}
@@ -147,7 +147,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
                   : 'bg-orange-100 hover:bg-orange-200 text-orange-800'
               }`}
             >
-              Medio
+              Medium
             </button>
             <button
               onClick={() => setDangerFilter('low')}
@@ -157,7 +157,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
                   : 'bg-green-100 hover:bg-green-200 text-green-800'
               }`}
             >
-              Bajo
+              Low
             </button>
           </div>
 

@@ -1,0 +1,131 @@
+==============================================
+  PASOS FINALES PARA DEPLOYMENT
+==============================================
+
+Git ya esta configurado con tu usuario: Barvicii
+Remote configurado: https://github.com/Barvicii/sds-inventory.git
+
+==============================================
+PASO 1: CREAR REPOSITORIO EN GITHUB
+==============================================
+
+1. Ve a: https://github.com/new
+
+2. Completa el formulario:
+   - Repository name: sds-inventory
+   - Description: SDS Chemical Inventory System for Emergency Services
+   - Visibility: Public (o Private si prefieres)
+   
+   IMPORTANTE: NO marques ninguna de estas opciones:
+   [ ] Add a README file
+   [ ] Add .gitignore
+   [ ] Choose a license
+   
+3. Click en "Create repository"
+
+==============================================
+PASO 2: HACER PUSH DEL CODIGO
+==============================================
+
+Ejecuta este comando en tu terminal:
+
+git push -u origin main
+
+Si te pide credenciales:
+- Username: Barvicii
+- Password: Tu token de acceso personal de GitHub
+
+Si no tienes token:
+1. Ve a: https://github.com/settings/tokens
+2. Click "Generate new token (classic)"
+3. Dale un nombre: "SDS Inventory Deploy"
+4. Selecciona scope: [x] repo
+5. Click "Generate token"
+6. COPIA el token (no lo veras de nuevo)
+7. Usa ese token como password
+
+==============================================
+PASO 3: DESPLEGAR EN VERCEL
+==============================================
+
+1. Ve a: https://vercel.com/new
+
+2. Si no tienes cuenta:
+   - Click "Sign Up"
+   - Usa "Continue with GitHub"
+   - Autoriza Vercel
+
+3. Import Git Repository:
+   - Busca "sds-inventory" en la lista
+   - Click "Import"
+
+4. Configure Project:
+   - Framework Preset: Next.js (auto-detectado)
+   - Root Directory: ./
+   - Build Command: npm run build (auto)
+   - Output Directory: .next (auto)
+   
+   NO necesitas agregar variables de entorno
+   
+5. Click "Deploy"
+
+6. Espera 1-2 minutos mientras Vercel construye tu app
+
+==============================================
+RESULTADO
+==============================================
+
+Obtendras una URL como:
+https://sds-inventory.vercel.app
+o
+https://sds-inventory-barvicii.vercel.app
+
+Esa es la URL para:
+- Generar el QR code
+- Acceder a la aplicacion
+- Compartir con servicios de emergencia
+
+==============================================
+PASO 4: GENERAR QR CODE
+==============================================
+
+1. Ve a: https://www.qr-code-generator.com/
+
+2. En "URL": Pega tu URL de Vercel
+
+3. Personaliza (opcional):
+   - Color
+   - Logo
+   - Frame con texto "CHEMICAL INVENTORY - SCAN HERE"
+
+4. Descarga el QR como PNG de alta resolucion
+
+5. Imprime y coloca en:
+   - Judco Chemical Shed
+   - Judco Fertilizer Shed
+   - Patutahi Chemical Shed
+   - Patutahi Fertilizer Shed
+
+==============================================
+ACTUALIZACIONES FUTURAS
+==============================================
+
+Para actualizar el inventario:
+
+1. Edita los archivos Excel en public/
+
+2. Ejecuta:
+   git add .
+   git commit -m "Update inventory"
+   git push
+
+3. Vercel desplegara automaticamente en 1-2 minutos
+
+==============================================
+
+Si tienes algun problema, revisa:
+- DEPLOYMENT_GUIDE.md (guia detallada)
+- https://vercel.com/docs
+- https://docs.github.com/en/get-started
+
+==============================================

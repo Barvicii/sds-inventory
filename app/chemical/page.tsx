@@ -10,7 +10,7 @@ export default function ChemicalPage() {
     <>
       <Header 
         title="Chemical Shed" 
-        subtitle="Productos Químicos - Judco & Patutahi"
+        subtitle="Chemical Products - Judco & Patutahi"
         showBackButton={true}
       />
       <InventoryList 

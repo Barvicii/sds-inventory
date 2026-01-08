@@ -1,0 +1,49 @@
+# Resumen Ejecutivo - Deployment
+
+## Estado Actual: LISTO PARA DESPLEGAR
+
+### Archivos Creados/Configurados:
+- vercel.json - Configuracion de Vercel
+- .gitignore - Archivos a excluir
+- Git repository inicializado
+- Commit inicial creado
+
+### Build Verification:
+- npm run build: EXITOSO
+- No errores de TypeScript
+- No errores de compilacion
+- Paginas estaticas generadas correctamente
+
+### Opciones de Deployment:
+
+#### OPCION 1: Vercel CLI (RAPIDO - 5 minutos)
+```bash
+npm install -g vercel
+vercel login
+vercel --prod
+```
+
+#### OPCION 2: GitHub + Vercel (RECOMENDADO - 10 minutos)
+1. Crear repo en GitHub.com
+2. git remote add origin https://github.com/TU_USUARIO/sds-inventory.git
+3. git branch -M main
+4. git push -u origin main
+5. Ir a vercel.com -> Import Project
+
+### Despues del Deployment:
+1. Obtendras URL: https://tu-proyecto.vercel.app
+2. Genera QR Code apuntando a esa URL
+3. Imprime y coloca en los sheds
+
+### URLs del proyecto:
+- Landing: https://tu-proyecto.vercel.app/
+- Chemical Shed: https://tu-proyecto.vercel.app/chemical
+- Fertilizer Shed: https://tu-proyecto.vercel.app/fertilizer
+
+### Actualizaciones Futuras:
+- Edita archivos Excel en public/
+- git add . && git commit -m "Update inventory"
+- git push
+- Vercel despliega automaticamente
+
+Guia completa: DEPLOYMENT_GUIDE.md
