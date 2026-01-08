@@ -1,0 +1,649 @@
+[
+  {
+    "Nombre": "21% Soluble Boron",
+    "Activo": "disodium octaborate tetrahydrate",
+    "Cantidad": "25.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Fertiliser",
+    "HazardClasses": "Class 6: Substances Toxic to People"
+  },
+  {
+    "Nombre": "Ag Copp 75",
+    "Activo": "Copper",
+    "Cantidad": "25.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Altacor",
+    "Activo": "Chlorantraniliprole",
+    "Cantidad": "0.28 kg",
+    "Peligro": "medium",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Aptivis",
+    "Activo": "Pydiflumetofen",
+    "Cantidad": "4.36 L",
+    "Peligro": "high",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/Wo000000ljuX/nDIVXxQzxIcRjo7ZV_p9K4eGyr3NXiFX_JHUILVkIus",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Arrow 360",
+    "Activo": "Clethodim",
+    "Cantidad": "2.00 L",
+    "Peligro": "high",
+    "LinkSDS": "chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.adama.com/new-zealand/sites/adama_new_zealand/files/downloads/Arrow_360_SDS_July2018.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Avaunt",
+    "Activo": "Indoxacarb",
+    "Cantidad": "1.10 kg",
+    "Peligro": "high",
+    "LinkSDS": "https://ag.fmc.com/nz/sites/default/files/2024-08/Avaunt30WG_NZ_6N_New_0723.pdf",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Baga",
+    "Activo": "Gibberellin A4 & A7",
+    "Cantidad": "0.24 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Bammer",
+    "Activo": "Glufosinate Ammonium",
+    "Cantidad": "80.00 L",
+    "Peligro": "high",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Bammer%20(UPL)%20SDS.pdf",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Bapsol 100",
+    "Activo": "6-Benzyladenine (Low rate - fruit sizing)",
+    "Cantidad": "3.00 L",
+    "Peligro": "high",
+    "LinkSDS": "https://nz.grochem.com/wp-content/uploads/2018/05/Bapsol_SDS_1021.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 3: Flammable Liquids, Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Belanty",
+    "Activo": "Mefentrifluconazole",
+    "Cantidad": "4.00 L",
+    "Peligro": "medium",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_BELANTY_NZ_25082023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "BioMaris",
+    "Activo": "Potassium",
+    "Cantidad": "20.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Bond Xtra",
+    "Activo": "Organisilicone",
+    "Cantidad": "8.00 L",
+    "Peligro": "high",
+    "LinkSDS": "https://nz.uplcorp.com/download_links/BONDXTRA_SafetyDataSheet.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People"
+  },
+  {
+    "Nombre": "Calcinit",
+    "Activo": "15.5% N + 19% Ca",
+    "Cantidad": "25.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Calcinit%20(Yara)%20SDS.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People"
+  },
+  {
+    "Nombre": "Calcium 175",
+    "Activo": "Calcium",
+    "Cantidad": "1255.00 L",
+    "Peligro": "high",
+    "LinkSDS": "https://nz.grochem.com/wp-content/uploads/2018/05/Calcium-175_SDS_0821.pdf",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Calcium Ammonium Nitrate (CAN)",
+    "Cantidad": "5499.40 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Fert Shed, Patutahi Chem Shed",
+    "Tipo": "Fertiliser",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Captan 600 Flo",
+    "Activo": "Captan (Low PHI)",
+    "Cantidad": "50.23 L",
+    "Peligro": "high",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Captan_600_Flo_SDS.pdf",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "ChampION++",
+    "Activo": "Copper",
+    "Cantidad": "20.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Comic",
+    "Activo": "Tebufenozide",
+    "Cantidad": "20.64 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Delan",
+    "Activo": "Dithianon",
+    "Cantidad": "9.20 kg",
+    "Peligro": "high",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_DELAN_NZ_31082023.pdf",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Dodine Grochem",
+    "Activo": "Dodine",
+    "Cantidad": "10.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Du-Wett",
+    "Activo": "Organosilicone",
+    "Cantidad": "18.50 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "EnCal",
+    "Activo": "Calcium ",
+    "Cantidad": "15.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Erger",
+    "Activo": "Ammonium nitrate + vegetable extract",
+    "Cantidad": "62.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 5: Oxidizing Substances, Class 6: Substances Toxic to People, Class 8: Corrosive"
+  },
+  {
+    "Nombre": "Esteem",
+    "Activo": "Polyoxin D",
+    "Cantidad": "0.00 L",
+    "Peligro": "medium",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Exault",
+    "Activo": "Buprofezin",
+    "Cantidad": "3.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Excel Plus Oil",
+    "Activo": "Mineral Oil",
+    "Cantidad": "89.46 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Flint",
+    "Activo": "Trifloxystrobin",
+    "Cantidad": "2.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "GIB 47",
+    "Activo": "Gibberellic Acid",
+    "Cantidad": "3.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Gro-Wet",
+    "Activo": "Trisiloxane Alkoxyalate",
+    "Cantidad": "34.66 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 8: Corrosive, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Growth",
+    "Activo": "Gibberellic acid",
+    "Cantidad": "40.42 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Kontrol",
+    "Activo": "Prohexadione calcium",
+    "Cantidad": "0.41 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Lokit",
+    "Activo": "Propionic acid",
+    "Cantidad": "37.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 8: Corrosive, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Magnesium Sulphate",
+    "Cantidad": "6417.66 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed, Patutahi Fert Shed",
+    "Tipo": "Fertiliser",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Manzate Evolution",
+    "Activo": "Mancozeb",
+    "Cantidad": "10.98 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Megafol",
+    "Activo": "Nitrogen",
+    "Cantidad": "2.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People"
+  },
+  {
+    "Nombre": "Merpan Max",
+    "Activo": "Captan (Low PHI)",
+    "Cantidad": "30.00 kg",
+    "Peligro": "medium",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Meteor",
+    "Activo": "Metamitron",
+    "Cantidad": "0.53 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Movento SC100",
+    "Activo": "Spirotetramat",
+    "Cantidad": "5.20 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People"
+  },
+  {
+    "Nombre": "Neptune",
+    "Activo": "Bupirimate",
+    "Cantidad": "2.80 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Oasis",
+    "Activo": "Calcium Carbonate",
+    "Cantidad": "400.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://arxada.co.nz/wp-content/uploads/2019/10/Oasis-SDS.pdf",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Orthene",
+    "Activo": "Acephate",
+    "Cantidad": "1.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People"
+  },
+  {
+    "Nombre": "PanCal",
+    "Activo": "Calcium",
+    "Cantidad": "20.00 L",
+    "Peligro": "medium",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Phosgard",
+    "Activo": "Phosphorous Acid",
+    "Cantidad": "200.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Polyram DF",
+    "Activo": "Metiram",
+    "Cantidad": "17.58 kg",
+    "Peligro": "high",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_POLYRAM%20DF_NZ_25092023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Pristine",
+    "Activo": "Boscalid + Pyraclostrobin",
+    "Cantidad": "1.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Proclaim Opti",
+    "Activo": "Emamectin benzoate",
+    "Cantidad": "2.48 kg",
+    "Peligro": "high",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/3V000001h6xI/lg_m7s6wVC9YrlrS.Ddfbfam1ks4PMvUa27zNp1NCCo",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Prodigy 240SC",
+    "Activo": "Methoxyfenozide",
+    "Cantidad": "5.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Protek",
+    "Activo": "Carbendazim",
+    "Cantidad": "2.00 L",
+    "Peligro": "high",
+    "LinkSDS": "https://arxada.co.nz/wp-content/uploads/2018/01/SDS-Arxada-Protek-June-2022.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Regalis Xtra",
+    "Activo": "Prohexadione calcium",
+    "Cantidad": "2.60 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Score 10WG",
+    "Activo": "Difenoconazole",
+    "Cantidad": "0.20 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Seguris Flexi",
+    "Activo": "Isopyrazam",
+    "Cantidad": "5.00 L",
+    "Peligro": "medium",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/1o0000005A8w/Uty.WNu_Cu1tJInlXWLzc56TFYUcGADcKBRGA6hJV2E",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Sercadis",
+    "Activo": "Fluxapyroxad",
+    "Cantidad": "3.03 L",
+    "Peligro": "high",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_SERCADIS_NZ_03082023.pdf",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Serenade Optimum",
+    "Activo": "Bacillus subtilis",
+    "Cantidad": "3.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Spray Aid",
+    "Activo": "2-Butoxyethanol",
+    "Cantidad": "55.34 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed, Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 3: Flammable Liquids, Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Stomp Xtra",
+    "Activo": "Pendimethanlin",
+    "Cantidad": "40.00 L",
+    "Peligro": "high",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_STOMP_XTRA_NZ_16122023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Talendo",
+    "Activo": "Proquinazid",
+    "Cantidad": "3.88 L",
+    "Peligro": "high",
+    "LinkSDS": "https://corteva.showpad.com/share/M3aO7KybYb80x8EH7CvzK",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Thin-It",
+    "Activo": "Ammonium Thiosulphate",
+    "Cantidad": "20.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Trace-it Copper",
+    "Activo": "Copper",
+    "Cantidad": "20.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 8: Corrosive, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Triumph Gold",
+    "Activo": "50 g/litre picloram as the amine salt and 100 g/litre triclopyr",
+    "Cantidad": "1.00 L",
+    "Peligro": "medium",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Umbrella",
+    "Activo": "Fatty Acids + Alkylphenolethoxylates",
+    "Cantidad": "10.66 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed, Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Vayego",
+    "Activo": "Tetraniliprole",
+    "Cantidad": "1.00 L",
+    "Peligro": "medium",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Waiken",
+    "Activo": "Vegetable oil extract",
+    "Cantidad": "180.00 L",
+    "Peligro": "high",
+    "LinkSDS": "https://www.csinfosafe.com/CSIAU/ExternalView.aspx?sdsid=AEE8F0DE-C74A-446E-A2B3-0E2FE57F0369",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Wuxal Manganese",
+    "Activo": "Manganese (II) sulphate monohydrate",
+    "Cantidad": "30.00 L",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical",
+    "HazardClasses": "Class 6: Substances Toxic to People, Class 9: Substances Toxic to the Environment "
+  },
+  {
+    "Nombre": "Yara Mila Complex",
+    "Cantidad": "799.40 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Fert Shed",
+    "Tipo": "Fertiliser",
+    "HazardClasses": ""
+  },
+  {
+    "Nombre": "Yara Tera Krista MKP",
+    "Activo": "Potassium Dihydrogenorthophosphate",
+    "Cantidad": "2350.00 kg",
+    "Peligro": "high",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Fertiliser",
+    "HazardClasses": "Class 6: Substances Toxic to People"
+  }
+]

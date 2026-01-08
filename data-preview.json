@@ -1,0 +1,780 @@
+[
+  {
+    "Nombre": "Erger",
+    "Activo": "Ammonium nitrate + vegetable extract",
+    "Cantidad": "62.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Calcinit ",
+    "Activo": "15.5% N + 19% Ca",
+    "Cantidad": "25.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Calcinit%20(Yara)%20SDS.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Waiken",
+    "Activo": "Vegetable oil extract",
+    "Cantidad": "180.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://www.csinfosafe.com/CSIAU/ExternalView.aspx?sdsid=AEE8F0DE-C74A-446E-A2B3-0E2FE57F0369",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Exault",
+    "Activo": "Buprofezin",
+    "Cantidad": "3.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Bapsol 100",
+    "Activo": "6-Benzyladenine (Low rate - fruit sizing)",
+    "Cantidad": "3.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://nz.grochem.com/wp-content/uploads/2018/05/Bapsol_SDS_1021.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Delan",
+    "Activo": "Dithianon",
+    "Cantidad": "8.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_DELAN_NZ_31082023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Lokit",
+    "Activo": "Propionic acid",
+    "Cantidad": "17.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Polyram DF",
+    "Activo": "Metiram",
+    "Cantidad": "17.58 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_POLYRAM%20DF_NZ_25092023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Seguris Flexi",
+    "Activo": "Isopyrazam",
+    "Cantidad": "5.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/1o0000005A8w/Uty.WNu_Cu1tJInlXWLzc56TFYUcGADcKBRGA6hJV2E",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Belanty",
+    "Activo": "Mefentrifluconazole",
+    "Cantidad": "4.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_BELANTY_NZ_25082023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Megafol",
+    "Activo": "Nitrogen",
+    "Cantidad": "2.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Sercadis",
+    "Activo": "Fluxapyroxad",
+    "Cantidad": "2.03 L",
+    "Peligro": "low",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_SERCADIS_NZ_03082023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Score 10WG",
+    "Activo": "Difenoconazole",
+    "Cantidad": "0.20 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Meteor",
+    "Activo": "Metamitron",
+    "Cantidad": "0.30 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Vayego",
+    "Activo": "Tetraniliprole",
+    "Cantidad": "1.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Movento SC100",
+    "Activo": "Spirotetramat",
+    "Cantidad": "5.20 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Sercadis",
+    "Activo": "Fluxapyroxad",
+    "Cantidad": "1.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_SERCADIS_NZ_03082023.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Flint",
+    "Activo": "Trifloxystrobin",
+    "Cantidad": "1.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "ChampION++",
+    "Activo": "Copper",
+    "Cantidad": "20.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Dodine Grochem ",
+    "Activo": "Dodine",
+    "Cantidad": "10.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Neptune",
+    "Activo": "Bupirimate",
+    "Cantidad": "2.80 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Regalis Xtra",
+    "Activo": "Prohexadione calcium",
+    "Cantidad": "2.60 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Kontrol",
+    "Activo": "Prohexadione calcium",
+    "Cantidad": "0.41 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Aptivis ",
+    "Activo": "Pydiflumetofen",
+    "Cantidad": "3.86 L",
+    "Peligro": "low",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/Wo000000ljuX/nDIVXxQzxIcRjo7ZV_p9K4eGyr3NXiFX_JHUILVkIus",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "GIB 47",
+    "Activo": "Gibberellic Acid",
+    "Cantidad": "3.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Spray Aid",
+    "Activo": "2-Butoxyethanol",
+    "Cantidad": "38.34 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Flint",
+    "Activo": "Trifloxystrobin",
+    "Cantidad": "1.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Thin-It",
+    "Activo": "Ammonium Thiosulphate",
+    "Cantidad": "20.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Growth",
+    "Activo": "Gibberellic acid",
+    "Cantidad": "40.42 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Manzate Evolution",
+    "Activo": "Mancozeb",
+    "Cantidad": "0.98 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Talendo",
+    "Activo": "Proquinazid",
+    "Cantidad": "3.88 L",
+    "Peligro": "low",
+    "LinkSDS": "https://corteva.showpad.com/share/M3aO7KybYb80x8EH7CvzK",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Spray Aid",
+    "Activo": "2-Butoxyethanol",
+    "Cantidad": "17.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Gro-Wet",
+    "Activo": "Trisiloxane Alkoxyalate",
+    "Cantidad": "16.50 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Gro-Wet",
+    "Activo": "Trisiloxane Alkoxyalate",
+    "Cantidad": "18.16 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Lokit",
+    "Activo": "Propionic acid",
+    "Cantidad": "20.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Aptivis ",
+    "Activo": "Pydiflumetofen",
+    "Cantidad": "0.50 L",
+    "Peligro": "low",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/Wo000000ljuX/nDIVXxQzxIcRjo7ZV_p9K4eGyr3NXiFX_JHUILVkIus",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Meteor",
+    "Activo": "Metamitron",
+    "Cantidad": "0.23 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Delan",
+    "Activo": "Dithianon",
+    "Cantidad": "1.20 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_DELAN_NZ_31082023.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Manzate Evolution",
+    "Activo": "Mancozeb",
+    "Cantidad": "10.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "BioMaris",
+    "Activo": "Potassium",
+    "Cantidad": "20.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "PanCal",
+    "Activo": "Calcium",
+    "Cantidad": "20.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Calcium 175",
+    "Activo": "Calcium",
+    "Cantidad": "175.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://nz.grochem.com/wp-content/uploads/2018/05/Calcium-175_SDS_0821.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Calcium 175",
+    "Activo": "Calcium",
+    "Cantidad": "1080.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://nz.grochem.com/wp-content/uploads/2018/05/Calcium-175_SDS_0821.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Oasis",
+    "Activo": "Calcium Carbonate",
+    "Cantidad": "300.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://arxada.co.nz/wp-content/uploads/2019/10/Oasis-SDS.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Serenade Optimum",
+    "Activo": "Bacillus subtilis",
+    "Cantidad": "3.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Avaunt",
+    "Activo": "Indoxacarb",
+    "Cantidad": "0.70 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://ag.fmc.com/nz/sites/default/files/2024-08/Avaunt30WG_NZ_6N_New_0723.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Esteem",
+    "Activo": "Polyoxin D",
+    "Cantidad": "0.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Captan 600 Flo",
+    "Activo": "Captan (Low PHI)",
+    "Cantidad": "37.50 L",
+    "Peligro": "low",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Captan_600_Flo_SDS.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Altacor",
+    "Activo": "Chlorantraniliprole",
+    "Cantidad": "0.17 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Comic ",
+    "Activo": "Tebufenozide",
+    "Cantidad": "19.78 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Proclaim Opti ",
+    "Activo": "Emamectin benzoate",
+    "Cantidad": "0.20 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/3V000001h6xI/lg_m7s6wVC9YrlrS.Ddfbfam1ks4PMvUa27zNp1NCCo",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Bond Xtra",
+    "Activo": "Organisilicone",
+    "Cantidad": "8.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://nz.uplcorp.com/download_links/BONDXTRA_SafetyDataSheet.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Oasis",
+    "Activo": "Calcium Carbonate",
+    "Cantidad": "100.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://arxada.co.nz/wp-content/uploads/2019/10/Oasis-SDS.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Prodigy 240SC",
+    "Activo": "Methoxyfenozide",
+    "Cantidad": "5.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Altacor",
+    "Activo": "Chlorantraniliprole",
+    "Cantidad": "0.11 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Comic ",
+    "Activo": "Tebufenozide",
+    "Cantidad": "0.86 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Merpan Max",
+    "Activo": "Captan (Low PHI)",
+    "Cantidad": "30.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Proclaim Opti ",
+    "Activo": "Emamectin benzoate",
+    "Cantidad": "2.28 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://syngenta.my.salesforce.com/sfc/p/#24000000Yk1o/a/3V000001h6xI/lg_m7s6wVC9YrlrS.Ddfbfam1ks4PMvUa27zNp1NCCo",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Bammer",
+    "Activo": "Glufosinate Ammonium",
+    "Cantidad": "40.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Bammer%20(UPL)%20SDS.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Excel Plus Oil",
+    "Activo": "Mineral Oil",
+    "Cantidad": "89.46 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Arrow 360",
+    "Activo": "Clethodim",
+    "Cantidad": "2.00 L",
+    "Peligro": "low",
+    "LinkSDS": "chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.adama.com/new-zealand/sites/adama_new_zealand/files/downloads/Arrow_360_SDS_July2018.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Bammer",
+    "Activo": "Glufosinate Ammonium",
+    "Cantidad": "40.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Bammer%20(UPL)%20SDS.pdf",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Phosgard",
+    "Activo": "Phosphorous Acid",
+    "Cantidad": "200.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Calcium Ammonium Nitrate (CAN)",
+    "Cantidad": "799.40 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Fert Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "Ag Copp 75",
+    "Activo": "Copper",
+    "Cantidad": "25.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Du-Wett",
+    "Activo": "Organosilicone",
+    "Cantidad": "18.50 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Trace-it Copper",
+    "Activo": "Copper",
+    "Cantidad": "20.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Pristine",
+    "Activo": "Boscalid + Pyraclostrobin",
+    "Cantidad": "1.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Baga",
+    "Activo": "Gibberellin A4 & A7",
+    "Cantidad": "0.24 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Umbrella",
+    "Activo": "Fatty Acids + Alkylphenolethoxylates",
+    "Cantidad": "4.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Umbrella",
+    "Activo": "Fatty Acids + Alkylphenolethoxylates",
+    "Cantidad": "6.66 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Pristine",
+    "Activo": "Boscalid + Pyraclostrobin",
+    "Cantidad": "0.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Avaunt",
+    "Activo": "Indoxacarb",
+    "Cantidad": "0.40 kg",
+    "Peligro": "low",
+    "LinkSDS": "https://ag.fmc.com/nz/sites/default/files/2024-08/Avaunt30WG_NZ_6N_New_0723.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Protek",
+    "Activo": "Carbendazim",
+    "Cantidad": "2.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://arxada.co.nz/wp-content/uploads/2018/01/SDS-Arxada-Protek-June-2022.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "21% Soluble Boron",
+    "Activo": "disodium octaborate tetrahydrate",
+    "Cantidad": "10.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "21% Soluble Boron",
+    "Activo": "disodium octaborate tetrahydrate",
+    "Cantidad": "15.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "EnCal",
+    "Activo": "Calcium ",
+    "Cantidad": "15.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Wuxal Manganese",
+    "Activo": "Manganese (II) sulphate monohydrate",
+    "Cantidad": "30.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Magnesium Sulphate",
+    "Cantidad": "3300.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "Calcium Ammonium Nitrate (CAN)",
+    "Cantidad": "4700.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "Yara Tera Krista MKP",
+    "Activo": "Potassium Dihydrogenorthophosphate",
+    "Cantidad": "2350.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "Magnesium Sulphate",
+    "Cantidad": "3117.66 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Fert Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "Yara Mila Complex",
+    "Cantidad": "799.40 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Patutahi Fert Shed",
+    "Tipo": "Fertiliser"
+  },
+  {
+    "Nombre": "Captan 600 Flo",
+    "Activo": "Captan (Low PHI)",
+    "Cantidad": "12.72 L",
+    "Peligro": "low",
+    "LinkSDS": "https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Captan_600_Flo_SDS.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Orthene",
+    "Activo": "Acephate",
+    "Cantidad": "1.00 kg",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Triumph Gold",
+    "Activo": "50 g/litre picloram as the amine salt and 100 g/litre triclopyr",
+    "Cantidad": "1.00 L",
+    "Peligro": "low",
+    "LinkSDS": "",
+    "Ubicacion": "Judco Chem Shed",
+    "Tipo": "Chemical"
+  },
+  {
+    "Nombre": "Stomp Xtra",
+    "Activo": "Pendimethanlin",
+    "Cantidad": "40.00 L",
+    "Peligro": "low",
+    "LinkSDS": "https://crop-solutions.basf.co.nz/sites/basf.co.nz/files/2024-01/SDS_STOMP_XTRA_NZ_16122023.pdf",
+    "Ubicacion": "Patutahi Chem Shed",
+    "Tipo": "Chemical"
+  }
+]

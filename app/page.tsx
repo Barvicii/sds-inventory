@@ -1,0 +1,83 @@
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
+      <div className="max-w-4xl w-full">
+        {/* Header de emergencia */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-red-600 rounded-full mb-6 animate-pulse">
+            <i className="fas fa-skull-crossbones text-white text-4xl"></i>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 uppercase tracking-wider">
+            Chemical Shed
+          </h1>
+          <p className="text-gray-400 text-lg">Craigmore Farming - Sistema de Emergencias</p>
+        </div>
+
+        {/* Botones de selección */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {/* Chemical Shed */}
+          <Link href="/chemical">
+            <div className="group bg-red-600 hover:bg-red-700 rounded-2xl p-8 cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-2xl border-4 border-red-500">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-4 group-hover:bg-opacity-30 transition-all">
+                  <i className="fas fa-flask text-white text-4xl"></i>
+                </div>
+                <h2 className="text-3xl font-bold text-white mb-2 uppercase">Chemical Shed</h2>
+                <p className="text-red-100 text-sm mb-4">Judco & Patutahi</p>
+                <div className="flex items-center justify-center gap-2 text-white text-sm">
+                  <span>Acceder al inventario</span>
+                  <i className="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Fertilizer Shed */}
+          <Link href="/fertilizer">
+            <div className="group bg-green-600 hover:bg-green-700 rounded-2xl p-8 cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-2xl border-4 border-green-500">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-4 group-hover:bg-opacity-30 transition-all">
+                  <i className="fas fa-seedling text-white text-4xl"></i>
+                </div>
+                <h2 className="text-3xl font-bold text-white mb-2 uppercase">Fertilizer Shed</h2>
+                <p className="text-green-100 text-sm mb-4">Judco & Patutahi</p>
+                <div className="flex items-center justify-center gap-2 text-white text-sm">
+                  <span>Acceder al inventario</span>
+                  <i className="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Información de emergencia */}
+        <div className="bg-gray-800 bg-opacity-50 rounded-lg p-6 border border-gray-700">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                <i className="fas fa-phone-alt text-white text-xl"></i>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-white font-bold text-lg mb-2">En caso de emergencia</h3>
+              <p className="text-gray-400 text-sm mb-3">
+                Llame inmediatamente al 111 y proporcione información sobre los químicos desde el inventario
+              </p>
+              <a href="tel:111" className="inline-flex items-center gap-2 bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition">
+                <i className="fas fa-phone-alt"></i>
+                <span>Llamar 111</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="text-center mt-8 text-gray-500 text-xs">
+          <p>Desarrollado by <span className="text-blue-400 font-semibold">BarviciiCorp</span></p>
+        </div>
+      </div>
+    </div>
+  );
+}
