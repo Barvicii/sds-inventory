@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Inventario de Riesgo Químico - Craigmore',
-  description: 'Sistema de gestión de inventario químico para respuesta a emergencias',
+  title: 'Chemical Hazard Inventory - Craigmore',
+  description: 'Chemical inventory management system for emergency response',
 }
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
+    <html lang="en-NZ">
       <head>
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"

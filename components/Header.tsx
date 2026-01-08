@@ -10,7 +10,7 @@ interface HeaderProps {
 
 export default function Header({ 
   title = "Chemical Shed", 
-  subtitle = "Craigmore Farming - Respuesta a Emergencias",
+  subtitle = "Craigmore Farming - Emergency Response",
   showBackButton = false 
 }: HeaderProps) {
   return (
@@ -23,7 +23,7 @@ export default function Header({
               className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition text-sm"
             >
               <i className="fas fa-arrow-left"></i>
-              <span>Volver a selección</span>
+              <span>Back to Selection</span>
             </Link>
           </div>
         )}

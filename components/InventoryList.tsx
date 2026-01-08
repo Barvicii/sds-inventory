@@ -162,7 +162,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
           </div>
 
           <div className="mt-2 text-xs text-gray-500 text-right">
-            <span>{filteredChemicals.length} Productos mostrados</span>
+            <span>{filteredChemicals.length} Products Displayed</span>
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
         {loading && (
           <div className="text-center py-10">
             <i className="fas fa-spinner fa-spin text-4xl text-gray-400"></i>
-            <p className="mt-4 text-gray-600">Cargando inventario...</p>
+            <p className="mt-4 text-gray-600">Loading inventory...</p>
           </div>
         )}
 
@@ -186,7 +186,7 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
         {!loading && !error && filteredChemicals.length === 0 && (
           <div className="text-center py-10 text-gray-500">
             <i className="fas fa-search text-4xl mb-4"></i>
-            <p>No se encontraron químicos con los filtros aplicados.</p>
+            <p>No chemicals found with current filters.</p>
           </div>
         )}
 

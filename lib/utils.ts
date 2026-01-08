@@ -10,7 +10,7 @@ export function getDangerStyles(level: DangerLevel): DangerStyles {
         border: 'border-l-8 border-red-600',
         badge: 'bg-red-100 text-red-800 border-red-200',
         icon: 'fas fa-skull-crossbones',
-        text: 'ALTO RIESGO',
+        text: 'HIGH RISK',
         quantityBg: 'bg-red-50 border-red-300 ring-2 ring-red-400',
       };
     case 'medium':
@@ -18,7 +18,7 @@ export function getDangerStyles(level: DangerLevel): DangerStyles {
         border: 'border-l-8 border-orange-400',
         badge: 'bg-orange-100 text-orange-800 border-orange-200',
         icon: 'fas fa-exclamation-triangle',
-        text: 'Riesgo Medio',
+        text: 'Medium Risk',
         quantityBg: 'bg-orange-50 border-orange-200',
       };
     case 'low':
@@ -26,7 +26,7 @@ export function getDangerStyles(level: DangerLevel): DangerStyles {
         border: 'border-l-8 border-green-500',
         badge: 'bg-green-100 text-green-800 border-green-200',
         icon: 'fas fa-check-circle',
-        text: 'Bajo Riesgo',
+        text: 'Low Risk',
         quantityBg: 'bg-green-50 border-green-200',
       };
     default:
