@@ -163,6 +163,13 @@ export async function POST(request: NextRequest) {
         return;
       }
       
+      // Filter out zero or negative quantities
+      const quantity = row.Quantity || row.Total || row.total || row.quantity || 0;
+      if (quantity <= 0) {
+        filteredOutCount++;
+        return;
+      }
+      
       if (name && name !== '(blank)' && !String(name).includes('Total')) {
         const chemicalName = String(name).trim();
         chemicals.add(chemicalName);
@@ -173,11 +180,9 @@ export async function POST(request: NextRequest) {
         }
 
         // Store full row data - try multiple possible column names
-        const quantity = row.Quantity || row.Total || row.total || row.quantity || 0;
-        
         chemicalData.push({
           name: chemicalName,
-          store: row.Store || row.store || '',
+          store: store,
           stockUnit: row.StockUnit || row['Stock Unit'] || row.stockUnit || '',
           total: quantity,
           updatedAt: new Date()
