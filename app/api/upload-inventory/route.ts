@@ -41,26 +41,50 @@ export async function POST(request: NextRequest) {
 
     // Validate that it has the expected structure
     const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-    const data = XLSX.utils.sheet_to_json(firstSheet);
     
-    if (data.length === 0) {
+    // Try to read the data - ChemicalStores has headers on row 5 (0-indexed)
+    const rawData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+    
+    // Find the header row (contains "Chemical")
+    let headerRowIndex = -1;
+    for (let i = 0; i < Math.min(10, rawData.length); i++) {
+      const row = rawData[i] as any[];
+      if (row && row.includes('Chemical')) {
+        headerRowIndex = i;
+        break;
+      }
+    }
+
+    if (headerRowIndex === -1) {
       return NextResponse.json(
-        { error: 'El archivo Excel está vacío' },
+        { error: 'No se encontró la fila de encabezados con "Chemical"' },
         { status: 400 }
       );
     }
 
-    // Check if it looks like ChemicalStores (has Chemical and location columns)
-    const firstRow: any = data[0];
-    const hasChemicalColumn = 'Chemical' in firstRow || 'ChemicalName' in firstRow;
-    const hasLocationColumns = Object.keys(firstRow).some(key => 
-      ['Wellsford', 'Pukekohe', 'Tuakau', 'Waiuku', 'Patumahoe'].includes(key)
-    );
+    // Read data starting from the header row
+    const range = XLSX.utils.decode_range(firstSheet['!ref'] || 'A1');
+    range.s.r = headerRowIndex;
+    const adjustedRef = XLSX.utils.encode_range(range);
+    const tempSheet = { ...firstSheet, '!ref': adjustedRef };
+    const data = XLSX.utils.sheet_to_json(tempSheet);
+    
+    if (data.length === 0) {
+      return NextResponse.json(
+        { error: 'El archivo Excel está vacío o no tiene datos después de los encabezados' },
+        { status: 400 }
+      );
+    }
 
-    if (!hasChemicalColumn || !hasLocationColumns) {
+    // Check if it looks like ChemicalStores
+    const firstRow: any = data[0];
+    const hasChemicalColumn = 'Chemical' in firstRow;
+    const hasStoreColumn = 'Store' in firstRow || 'StockUnit' in firstRow;
+
+    if (!hasChemicalColumn || !hasStoreColumn) {
       return NextResponse.json(
         { 
-          error: 'El archivo no parece ser ChemicalStores. Debe tener columnas "Chemical" y ubicaciones (Wellsford, Pukekohe, etc.)',
+          error: 'El archivo no parece ser ChemicalStores. Debe tener columnas "Chemical" y "Store"',
           found: Object.keys(firstRow)
         },
         { status: 400 }
@@ -103,13 +127,32 @@ export async function POST(request: NextRequest) {
       try {
         const oldWorkbook = XLSX.readFile(oldFilePath);
         const oldSheet = oldWorkbook.Sheets[oldWorkbook.SheetNames[0]];
-        const oldData = XLSX.utils.sheet_to_json(oldSheet);
-        oldData.forEach((row: any) => {
-          const name = row.Chemical || row.ChemicalName;
-          if (name && name !== '(blank)' && !String(name).includes('Total')) {
-            existingChemicals.add(String(name).trim());
+        
+        // Find header row in old file
+        const oldRawData = XLSX.utils.sheet_to_json(oldSheet, { header: 1 });
+        let oldHeaderRowIndex = -1;
+        for (let i = 0; i < Math.min(10, oldRawData.length); i++) {
+          const row = oldRawData[i] as any[];
+          if (row && row.includes('Chemical')) {
+            oldHeaderRowIndex = i;
+            break;
           }
-        });
+        }
+        
+        if (oldHeaderRowIndex !== -1) {
+          const oldRange = XLSX.utils.decode_range(oldSheet['!ref'] || 'A1');
+          oldRange.s.r = oldHeaderRowIndex;
+          const oldAdjustedRef = XLSX.utils.encode_range(oldRange);
+          const oldTempSheet = { ...oldSheet, '!ref': oldAdjustedRef };
+          const oldData = XLSX.utils.sheet_to_json(oldTempSheet);
+          
+          oldData.forEach((row: any) => {
+            const name = row.Chemical;
+            if (name && name !== '(blank)' && !String(name).includes('Total')) {
+              existingChemicals.add(String(name).trim());
+            }
+          });
+        }
       } catch (error) {
         console.error('Error reading old file:', error);
       }
@@ -117,7 +160,7 @@ export async function POST(request: NextRequest) {
 
     // Analyze new data
     data.forEach((row: any) => {
-      const name = row.Chemical || row.ChemicalName;
+      const name = row.Chemical;
       if (name && name !== '(blank)' && !String(name).includes('Total')) {
         const chemicalName = String(name).trim();
         chemicals.add(chemicalName);

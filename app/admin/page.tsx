@@ -119,8 +119,9 @@ export default function AdminPage() {
                   </p>
                   <ul className="text-sm text-blue-700 list-disc list-inside mt-2 space-y-1">
                     <li>El archivo debe ser formato Excel (.xlsx)</li>
-                    <li>Debe contener la columna "Chemical" o "ChemicalName"</li>
-                    <li>Debe tener columnas de ubicaciones (Wellsford, Pukekohe, etc.)</li>
+                    <li>Debe contener la columna "Chemical"</li>
+                    <li>Debe tener columnas "Store", "StockUnit" o "Total"</li>
+                    <li>Los headers pueden estar en cualquier fila (se detectan automáticamente)</li>
                     <li>Se creará un backup automático del archivo anterior</li>
                     <li>Los nuevos químicos se detectarán automáticamente</li>
                   </ul>
