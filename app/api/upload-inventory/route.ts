@@ -94,7 +94,23 @@ export async function POST(request: NextRequest) {
     }
 
     // Connect to MongoDB
-    const client = await clientPromise;
+    let client;
+    try {
+      client = await clientPromise;
+    } catch (error) {
+      console.error('MongoDB connection error:', error);
+      return NextResponse.json(
+        { 
+          error: 'No se pudo conectar a MongoDB. Verifica que:\n' +
+                 '1. MONGODB_URI esté configurado en las variables de entorno\n' +
+                 '2. MongoDB Atlas permita conexiones desde 0.0.0.0/0 (todas las IPs)\n' +
+                 '3. El usuario de MongoDB tenga permisos correctos\n\n' +
+                 'Error técnico: ' + (error as Error).message
+        },
+        { status: 500 }
+      );
+    }
+    
     const db = client.db('sds-inventory');
     const chemicalsCollection = db.collection('chemicals');
     const uploadsCollection = db.collection('uploads');
