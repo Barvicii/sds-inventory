@@ -1,8 +1,8 @@
 /**
  * Mapa de químicos a sus URLs de SDS directas en Horticentre
- * Generado: 2026-01-16T22:13:04.612Z
- * Químicos con PDF directo: 139
- * Químicos con fallback genérico: 65
+ * Generado: 2026-01-16T22:21:34.032Z
+ * Químicos con PDF directo: 140
+ * Químicos con fallback genérico: 64
  */
 export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   // 21% Soluble Boron → Wuxal Boron Plus (Aglukon) SDS.pdf
@@ -93,8 +93,8 @@ export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   'dithane-rainshield-neo-tec': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Dithane%20Rainshield%20SDS.pdf',
   // Dodine → Dodine 400 (Arxada) SDS.pdf
   'dodine': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Dodine%20400%20(Arxada)%20SDS.pdf',
-  // Dodine Grochem → Bapsol (Grochem) SDS.pdf
-  'dodine-grochem': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Bapsol%20(Grochem)%20SDS.pdf',
+  // Dodine Grochem → Dodine 400 (Arxada) SDS.pdf
+  'dodine-grochem': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Dodine%20400%20(Arxada)%20SDS.pdf',
   // Dragon 700WG → Dragon 700WG (Nufarm) SDS.pdf
   'dragon-700wg': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Dragon%20700WG%20(Nufarm)%20SDS.pdf',
   // Du-Wett → Du-Wett Organic (UPL) SDS.pdf
@@ -115,16 +115,16 @@ export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   'exault': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Exault%20(Grochem)%20SDS.pdf',
   // Excel Oil Organic → Excel Organic (Grochem) SDS.pdf
   'excel-oil-organic': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Excel%20Organic%20(Grochem)%20SDS.pdf',
-  // Excel Plus Oil → ExcelPlus (Grochem) SDS.pdf
-  'excel-plus-oil': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/ExcelPlus%20(Grochem)%20SDS.pdf',
+  // Excel Plus Oil → Excel Organic (Grochem) SDS.pdf
+  'excel-plus-oil': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Excel%20Organic%20(Grochem)%20SDS.pdf',
   // Ezy-Thin → Thin It (Groc) SDS.pdf
   'ezy-thin': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Thin%20It%20(Groc)%20SDS.pdf',
   // Fenamite → Fenamite (Corteva) SDS.pdf
   'fenamite': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Fenamite%20(Corteva)%20SDS.pdf',
   // Fertigate W → Fertigate W (Grochem) SDS .pdf
   'fertigate-w': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Fertigate%20W%20(Grochem)%20SDS%20.pdf',
-  // Fertigate Y → Fertigate Y (Grochem) SDS.pdf
-  'fertigate-y': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Fertigate%20Y%20(Grochem)%20SDS.pdf',
+  // Fertigate Y → Fertigate W (Grochem) SDS .pdf
+  'fertigate-y': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Fertigate%20W%20(Grochem)%20SDS%20.pdf',
   // Fiestar → Fiestar (Kenso) SDS.pdf
   'fiestar': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Fiestar%20(Kenso)%20SDS.pdf',
   // Flint → Flint SDS.pdf
@@ -133,8 +133,8 @@ export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   'foam-fighter': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Foam%20Fighter%20SDS.pdf',
   // Foliacin → Foliacin (Biostart) SDS .pdf
   'foliacin': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Foliacin%20(Biostart)%20SDS%20.pdf',
-  // Foliar Boron - Van Iperen → Calcium Ammonium Nitrate (van Iperen).pdf
-  'foliar-boron---van-iperen': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Calcium%20Ammonium%20Nitrate%20(van%20Iperen).pdf',
+  // Foliar Boron - Van Iperen → Wuxal Boron Plus (Aglukon) SDS.pdf
+  'foliar-boron---van-iperen': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Wuxal%20Boron%20Plus%20(Aglukon)%20SDS.pdf',
   // Foschek → Foschek SDS.pdf
   'foschek': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Foschek%20SDS.pdf',
   // Freeway → Freeway (Nufarm) SDS.pdf
@@ -187,10 +187,10 @@ export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   'movento-sc100': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Movento%20SC%20(Bayer)%20SDS.pdf',
   // Mycorrcin → Mycorrcin (Biostart) SDS .pdf
   'mycorrcin': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Mycorrcin%20(Biostart)%20SDS%20.pdf',
-  // NAA 100 → Bapsol100_sds.pdf
-  'naa-100': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Bapsol100_sds.pdf',
-  // NAA Grochem → Bapsol (Grochem) SDS.pdf
-  'naa-grochem': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Bapsol%20(Grochem)%20SDS.pdf',
+  // NAA 100 → NAA100 SDS.pdf
+  'naa-100': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/NAA100%20SDS.pdf',
+  // NAA Grochem → NAA100 SDS.pdf
+  'naa-grochem': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/NAA100%20SDS.pdf',
   // Neptune → Neptune (Arxada) SDS.pdf
   'neptune': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Neptune%20(Arxada)%20SDS.pdf',
   // Nordox → Nordox (Groc) SDS.pdf
@@ -255,14 +255,16 @@ export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   'torus': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Torus%20(Adria)%20SDS.pdf',
   // Trace-it Copper → Trace-it Copper (Grochem) SDS.pdf
   'trace-it-copper': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Trace-it%20Copper%20(Grochem)%20SDS.pdf',
-  // Trace-it Manganese N → Trace-it Copper (Grochem) SDS.pdf
-  'trace-it-manganese-n': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Trace-it%20Copper%20(Grochem)%20SDS.pdf',
+  // Trace-it Manganese N → Trace-It Manganese (Grochem) SDS.pdf
+  'trace-it-manganese-n': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Trace-It%20Manganese%20(Grochem)%20SDS.pdf',
   // Urea (Ravensdown) → Urea (Ravensdown) SDS.pdf
   'urea-ravensdown': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Urea%20(Ravensdown)%20SDS.pdf',
+  // Urea Low Biuret Krista → Urea (Ravensdown) SDS.pdf
+  'urea-low-biuret-krista': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Urea%20(Ravensdown)%20SDS.pdf',
   // Urea N Rich → Urea (Ravensdown) SDS.pdf
   'urea-n-rich': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Urea%20(Ravensdown)%20SDS.pdf',
-  // Urea Van Iperen → Calcium Ammonium Nitrate (van Iperen).pdf
-  'urea-van-iperen': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Calcium%20Ammonium%20Nitrate%20(van%20Iperen).pdf',
+  // Urea Van Iperen → Urea (Ravensdown) SDS.pdf
+  'urea-van-iperen': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Urea%20(Ravensdown)%20SDS.pdf',
   // VaporGard → VaporGard (KEYI) SDS.pdf
   'vaporgard': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/VaporGard%20(KEYI)%20SDS.pdf',
   // Vayego → Vayego (Bayer) SDS.pdf
@@ -281,8 +283,8 @@ export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   'wuxal-zinc-plus': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Wuxal%20Zinc%20Plus%20(Aglukon)%20SDS.pdf',
   // Yara Tera Calcinit → Calcinit (Yara) SDS.pdf
   'yara-tera-calcinit': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Calcinit%20(Yara)%20SDS.pdf',
-  // YaraVita Seniphos → Calcinit (Yara) SDS.pdf
-  'yaravita-seniphos': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/Calcinit%20(Yara)%20SDS.pdf',
+  // YaraVita Seniphos → YaraVita Croplift K SDS.pdf
+  'yaravita-seniphos': 'https://horticentre.co.nz/wp-content/uploads/Safety%20Datasheets/YaraVita%20Croplift%20K%20SDS.pdf',
   // Armobreak (no PDF encontrado, búsqueda manual)
   'armobreak': 'https://horticentre.co.nz/index.php/safety-datasheets/',
   // BioMaris (no PDF encontrado, búsqueda manual)
@@ -387,8 +389,6 @@ export const ONEDRIVE_SDS_LINKS: Record<string, string> = {
   'triumph-gold': 'https://horticentre.co.nz/index.php/safety-datasheets/',
   // Umbrella (no PDF encontrado, búsqueda manual)
   'umbrella': 'https://horticentre.co.nz/index.php/safety-datasheets/',
-  // Urea Low Biuret Krista (no PDF encontrado, búsqueda manual)
-  'urea-low-biuret-krista': 'https://horticentre.co.nz/index.php/safety-datasheets/',
   // Weed Off (no PDF encontrado, búsqueda manual)
   'weed-off': 'https://horticentre.co.nz/index.php/safety-datasheets/',
   // Yara Mila Complex (no PDF encontrado, búsqueda manual)

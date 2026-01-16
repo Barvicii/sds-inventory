@@ -180,19 +180,68 @@ function normalizeName(name) {
     .trim();
 }
 
-// Función para buscar match fuzzy
+// Función para extraer palabras clave (ignorando marcas comerciales y palabras genéricas)
+function getKeywords(name) {
+  const normalized = normalizeName(name);
+  const ignoreWords = ['sds', 'pdf', 'grochem', 'groc', 'upl', 'syng', 'syngenta', 'fmc', 'basf', 
+                       'bayer', 'adama', 'orion', 'nufarm', 'corteva', 'adria', 'arxada', 'yara',
+                       'van', 'iperen', 'redox', 'aglukon', 'keyi', 'frui', 'kenso', 'agritrade',
+                       'compo', 'expert', 'biostart', 'ravensdown', 'dksh', 'the', 'and'];
+  
+  return normalized
+    .split(/\s+/)
+    .filter(w => w.length > 2 && !ignoreWords.includes(w));
+}
+
+// Función para buscar match fuzzy mejorado
 function findBestMatch(chemicalName, pdfList) {
   const normalized = normalizeName(chemicalName);
+  const chemKeywords = getKeywords(chemicalName);
   
-  // Buscar match exacto
+  // 1. Buscar match exacto del nombre completo
   for (const pdf of pdfList) {
-    const pdfName = normalizeName(pdf.replace(/ SDS\.pdf$/i, '').replace(/\.pdf$/i, ''));
+    const pdfName = normalizeName(pdf.replace(/ SDS\.pdf$/i, '').replace(/ SDS \.pdf$/i, '').replace(/\.pdf$/i, ''));
     if (pdfName === normalized) {
       return pdf;
     }
   }
   
-  // Buscar si el químico está contenido en el PDF
+  // 2. Buscar match de primera palabra clave principal
+  if (chemKeywords.length > 0) {
+    const mainKeyword = chemKeywords[0];
+    const exactMatches = [];
+    
+    for (const pdf of pdfList) {
+      const pdfKeywords = getKeywords(pdf);
+      if (pdfKeywords.length > 0 && pdfKeywords[0] === mainKeyword) {
+        exactMatches.push(pdf);
+      }
+    }
+    
+    // Si hay solo un match por primera palabra, es muy probable que sea el correcto
+    if (exactMatches.length === 1) {
+      return exactMatches[0];
+    }
+    
+    // Si hay múltiples matches, buscar el que tenga más palabras en común
+    if (exactMatches.length > 1) {
+      let bestMatch = null;
+      let maxMatches = 0;
+      
+      for (const pdf of exactMatches) {
+        const pdfKeywords = getKeywords(pdf);
+        const commonWords = chemKeywords.filter(cw => pdfKeywords.includes(cw)).length;
+        if (commonWords > maxMatches) {
+          maxMatches = commonWords;
+          bestMatch = pdf;
+        }
+      }
+      
+      if (bestMatch) return bestMatch;
+    }
+  }
+  
+  // 3. Buscar si el químico está contenido en el PDF
   for (const pdf of pdfList) {
     const pdfName = normalizeName(pdf);
     if (pdfName.includes(normalized)) {
@@ -200,25 +249,25 @@ function findBestMatch(chemicalName, pdfList) {
     }
   }
   
-  // Buscar si el PDF está contenido en el químico (ej: "Wuxal Boron Plus" matchea con "Wuxal Boron")
+  // 4. Buscar coincidencias parciales por palabras clave
+  let bestMatch = null;
+  let maxScore = 0;
+  
   for (const pdf of pdfList) {
-    const pdfName = normalizeName(pdf.replace(/ SDS\.pdf$/i, '').replace(/\.pdf$/i, ''));
-    if (normalized.includes(pdfName)) {
-      return pdf;
+    const pdfKeywords = getKeywords(pdf);
+    const commonKeywords = chemKeywords.filter(cw => pdfKeywords.some(pw => pw === cw || pw.includes(cw) || cw.includes(pw)));
+    const score = commonKeywords.length;
+    
+    // Requiere al menos 1 palabra en común, o 2 si el químico tiene más de 2 palabras
+    const minScore = chemKeywords.length > 2 ? 2 : 1;
+    
+    if (score >= minScore && score > maxScore) {
+      maxScore = score;
+      bestMatch = pdf;
     }
   }
   
-  // Buscar palabras clave comunes
-  const chemWords = normalized.split(' ').filter(w => w.length > 2);
-  for (const pdf of pdfList) {
-    const pdfWords = normalizeName(pdf).split(' ').filter(w => w.length > 2);
-    const matches = chemWords.filter(cw => pdfWords.some(pw => pw.includes(cw) || cw.includes(pw)));
-    if (matches.length >= 2 || (matches.length >= 1 && chemWords.length <= 2)) {
-      return pdf;
-    }
-  }
-  
-  return null;
+  return bestMatch;
 }
 
 // Mapear químicos a PDFs
