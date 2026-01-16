@@ -2,6 +2,7 @@
 
 import { Chemical } from '@/types/chemical';
 import { getDangerStyles } from '@/lib/utils';
+import { getOneDriveSdsLink } from '@/lib/onedrive-links';
 
 interface ChemicalCardProps {
   chemical: Chemical;
@@ -14,6 +15,9 @@ interface ChemicalCardProps {
 export default function ChemicalCard({ chemical }: ChemicalCardProps) {
   const style = getDangerStyles(chemical.Peligro);
   const isHighRisk = chemical.Peligro === 'high';
+  
+  // Usar LinkSDS del Excel si existe, sino buscar en el mapeo de OneDrive
+  const sdsLink = chemical.LinkSDS || getOneDriveSdsLink(chemical.Nombre);
 
   return (
     <div
@@ -84,7 +88,7 @@ export default function ChemicalCard({ chemical }: ChemicalCardProps) {
       {/* Botón SDS */}
       <div className="mt-4 md:mt-0 w-full md:w-auto">
         <a
-          href={chemical.LinkSDS}
+          href={sdsLink}
           target="_blank"
           rel="noopener noreferrer"
           className="flex md:flex-col items-center justify-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-700 border border-blue-200 p-3 rounded-lg transition text-center group w-full md:w-24"
