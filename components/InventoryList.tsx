@@ -57,7 +57,10 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
       setChemicals(filteredData);
       setFilteredChemicals(filteredData);
     } catch (err) {
-      setError('Error al cargar el inventario. Verifique las URLs de los archivos Excel.');
+      setError(
+        'No se pudo cargar el inventario desde la base de datos. ' +
+        'Asegúrate de que MONGODB_URI esté configurado en Vercel y que hayas subido los datos desde /admin'
+      );
       console.error(err);
     } finally {
       setLoading(false);

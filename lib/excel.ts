@@ -11,17 +11,15 @@ export async function loadDataFromMongoDB(): Promise<Chemical[]> {
     const response = await fetch('/api/inventory', { cache: 'no-store' });
     
     if (!response.ok) {
-      // Si falla la API, retornar array vacío
-      console.warn('API de inventario no disponible, cargando desde Excel...');
-      return loadCombinedData('/ChemicalStores.xlsx', '/Chemicals.xlsx');
+      console.error('API de inventario no disponible (404). Verifica que MONGODB_URI esté configurado en Vercel.');
+      throw new Error('No se pudo conectar con la base de datos. Por favor contacta al administrador.');
     }
 
     const data = await response.json();
     
     if (!data.chemicals || data.chemicals.length === 0) {
-      // Si no hay datos en MongoDB, cargar desde Excel
-      console.warn('No hay datos en MongoDB, cargando desde Excel...');
-      return loadCombinedData('/ChemicalStores.xlsx', '/Chemicals.xlsx');
+      console.warn('No hay datos en MongoDB. Sube un archivo Excel desde /admin');
+      return [];
     }
 
     // Agrupar datos por químico y tipo de shed
@@ -80,8 +78,7 @@ export async function loadDataFromMongoDB(): Promise<Chemical[]> {
     return chemicals;
   } catch (error) {
     console.error('Error al cargar desde MongoDB:', error);
-    // Fallback a Excel
-    return loadCombinedData('/ChemicalStores.xlsx', '/Chemicals.xlsx');
+    throw error;
   }
 }
 
