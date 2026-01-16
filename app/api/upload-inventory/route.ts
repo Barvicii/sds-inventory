@@ -64,12 +64,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    console.log(`✅ Headers found at row ${headerRowIndex}`);
+
     // Read data starting from the header row
     const range = XLSX.utils.decode_range(firstSheet['!ref'] || 'A1');
     range.s.r = headerRowIndex;
     const adjustedRef = XLSX.utils.encode_range(range);
     const tempSheet = { ...firstSheet, '!ref': adjustedRef };
     const data = XLSX.utils.sheet_to_json(tempSheet);
+    
+    console.log(`📊 Parsed ${data.length} rows from Excel`);
+    if (data.length > 0) {
+      console.log('First row sample:', Object.keys(data[0] as any));
+    }
     
     if (data.length === 0) {
       return NextResponse.json(
@@ -128,8 +135,11 @@ export async function POST(request: NextRequest) {
     let newChemicals: string[] = [];
     const chemicalData: any[] = [];
 
-    data.forEach((row: any) => {
+    data.forEach((row: any, index: number) => {
       const name = row.Chemical;
+      if (index < 3) {
+        console.log(`Row ${index}:`, { Chemical: name, Store: row.Store, Total: row.Total });
+      }
       if (name && name !== '(blank)' && !String(name).includes('Total')) {
         const chemicalName = String(name).trim();
         chemicals.add(chemicalName);
@@ -151,12 +161,17 @@ export async function POST(request: NextRequest) {
     });
 
     // Update chemicals in database
-    // Delete old data
-    await chemicalsCollection.deleteMany({});
+    console.log(`🗑️ Deleting old data from MongoDB...`);
+    const deleteResult = await chemicalsCollection.deleteMany({});
+    console.log(`Deleted ${deleteResult.deletedCount} old documents`);
     
     // Insert new data
     if (chemicalData.length > 0) {
-      await chemicalsCollection.insertMany(chemicalData);
+      console.log(`💾 Inserting ${chemicalData.length} new chemical records...`);
+      const insertResult = await chemicalsCollection.insertMany(chemicalData);
+      console.log(`✅ Inserted ${insertResult.insertedCount} documents to MongoDB`);
+    } else {
+      console.warn('⚠️ No chemical data to insert!');
     }
 
     // Save upload history
@@ -166,10 +181,17 @@ export async function POST(request: NextRequest) {
       uploadDate: new Date(),
       totalChemicals: chemicals.size,
       totalRows: totalRows,
-      newChemicals: newChemicals,
+      newChemicals: newChemicals.length,
+      newChemicalsList: newChemicals,
       processedBy: 'admin',
     };
     await uploadsCollection.insertOne(uploadRecord);
+
+    console.log(`📈 Upload Summary:`);
+    console.log(`   - Total chemicals: ${chemicals.size}`);
+    console.log(`   - Total rows: ${totalRows}`);
+    console.log(`   - New chemicals: ${newChemicals.length}`);
+    console.log(`   - File: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`);
 
     return NextResponse.json({
       success: true,
