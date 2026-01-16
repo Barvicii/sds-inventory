@@ -126,6 +126,14 @@ export async function POST(request: NextRequest) {
     const chemicalsCollection = db.collection('chemicals');
     const uploadsCollection = db.collection('uploads');
 
+    // Target stores - only these will be saved
+    const TARGET_STORES = [
+      'Judco Chem Shed',
+      'Judco Fert Shed',
+      'Patutahi Chem Shed',
+      'Patutahi Fert Shed'
+    ];
+
     // Get existing chemicals from database
     const existingChemicals = new Set<string>();
     const existingDocs = await chemicalsCollection.find({}).toArray();
@@ -138,13 +146,21 @@ export async function POST(request: NextRequest) {
     let totalRows = 0;
     let newChemicals: string[] = [];
     const chemicalData: any[] = [];
+    let filteredOutCount = 0;
 
     data.forEach((row: any, index: number) => {
       const name = row.Chemical;
+      const store = row.Store || '';
       
       // Log all columns of first few rows for debugging
       if (index < 5) {
         console.log(`Row ${index} (all columns):`, JSON.stringify(row));
+      }
+      
+      // Filter by target stores first
+      if (!TARGET_STORES.includes(store)) {
+        filteredOutCount++;
+        return;
       }
       
       if (name && name !== '(blank)' && !String(name).includes('Total')) {
@@ -200,6 +216,7 @@ export async function POST(request: NextRequest) {
     console.log(`   - Total chemicals: ${chemicals.size}`);
     console.log(`   - Total rows: ${totalRows}`);
     console.log(`   - New chemicals: ${newChemicals.length}`);
+    console.log(`   - Filtered out (other stores): ${filteredOutCount}`);
     console.log(`   - File: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`);
 
     return NextResponse.json({
