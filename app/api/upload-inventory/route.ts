@@ -42,7 +42,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate that it has the expected structure
-    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+    // Try to find 'Data' sheet first, otherwise use first sheet
+    const sheetName = workbook.SheetNames.includes('Data') ? 'Data' : workbook.SheetNames[0];
+    const firstSheet = workbook.Sheets[sheetName];
+    
+    console.log(`📋 Using sheet: "${sheetName}" (available: ${workbook.SheetNames.join(', ')})`);
     
     // Try to read the data - ChemicalStores has headers on row 5 (0-indexed)
     const rawData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
@@ -153,7 +157,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Store full row data - try multiple possible column names
-        const quantity = row.Total || row.Quantity || row.total || row.quantity || 0;
+        const quantity = row.Quantity || row.Total || row.total || row.quantity || 0;
         
         chemicalData.push({
           name: chemicalName,
