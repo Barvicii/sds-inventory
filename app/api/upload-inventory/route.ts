@@ -137,9 +137,12 @@ export async function POST(request: NextRequest) {
 
     data.forEach((row: any, index: number) => {
       const name = row.Chemical;
-      if (index < 3) {
-        console.log(`Row ${index}:`, { Chemical: name, Store: row.Store, Total: row.Total });
+      
+      // Log all columns of first few rows for debugging
+      if (index < 5) {
+        console.log(`Row ${index} (all columns):`, JSON.stringify(row));
       }
+      
       if (name && name !== '(blank)' && !String(name).includes('Total')) {
         const chemicalName = String(name).trim();
         chemicals.add(chemicalName);
@@ -149,12 +152,14 @@ export async function POST(request: NextRequest) {
           newChemicals.push(chemicalName);
         }
 
-        // Store full row data
+        // Store full row data - try multiple possible column names
+        const quantity = row.Total || row.Quantity || row.total || row.quantity || 0;
+        
         chemicalData.push({
           name: chemicalName,
-          store: row.Store || '',
-          stockUnit: row.StockUnit || '',
-          total: row.Total || 0,
+          store: row.Store || row.store || '',
+          stockUnit: row.StockUnit || row['Stock Unit'] || row.stockUnit || '',
+          total: quantity,
           updatedAt: new Date()
         });
       }
