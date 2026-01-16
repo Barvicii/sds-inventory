@@ -3,6 +3,89 @@ import { Chemical, ExcelChemical, ExcelStore } from '@/types/chemical';
 import { normalizeDangerLevel, classifyChemicalDanger } from './utils';
 import { getOneDriveSdsLink } from './onedrive-links';
 
+/**
+ * Carga datos desde MongoDB vía API
+ */
+export async function loadDataFromMongoDB(): Promise<Chemical[]> {
+  try {
+    const response = await fetch('/api/inventory', { cache: 'no-store' });
+    
+    if (!response.ok) {
+      // Si falla la API, retornar array vacío
+      console.warn('API de inventario no disponible, cargando desde Excel...');
+      return loadCombinedData('/ChemicalStores.xlsx', '/Chemicals.xlsx');
+    }
+
+    const data = await response.json();
+    
+    if (!data.chemicals || data.chemicals.length === 0) {
+      // Si no hay datos en MongoDB, cargar desde Excel
+      console.warn('No hay datos en MongoDB, cargando desde Excel...');
+      return loadCombinedData('/ChemicalStores.xlsx', '/Chemicals.xlsx');
+    }
+
+    // Agrupar datos por químico y tipo de shed
+    const grouped = new Map<string, {
+      totalQuantity: number;
+      unit: string;
+      stores: Set<string>;
+      firstEntry: any;
+      shedType: 'Chem' | 'Fert';
+    }>();
+
+    data.chemicals.forEach((item: any) => {
+      // Determinar tipo de shed
+      const shedType: 'Chem' | 'Fert' = item.store?.includes('Chem Shed') ? 'Chem' : 'Fert';
+      
+      // Clave única: nombre + tipo de shed
+      const key = `${item.name.trim()}|${shedType}`;
+      
+      if (!grouped.has(key)) {
+        grouped.set(key, {
+          totalQuantity: 0,
+          unit: item.stockUnit || '',
+          stores: new Set(),
+          firstEntry: item,
+          shedType
+        });
+      }
+      
+      const group = grouped.get(key)!;
+      group.totalQuantity += Math.abs(item.total || 0);
+      group.stores.add(item.store);
+    });
+
+    // Convertir a Chemical[]
+    const chemicals: Chemical[] = [];
+    
+    grouped.forEach((group, key) => {
+      const chemicalName = key.split('|')[0];
+      const cantidadFormateada = `${group.totalQuantity.toFixed(2)} ${group.unit}`.trim();
+      const storesList = Array.from(group.stores).join(', ');
+      const linkSDS = buildOneDriveSdsUrl(chemicalName);
+
+      chemicals.push({
+        Nombre: chemicalName,
+        Activo: '',
+        Cantidad: cantidadFormateada,
+        Peligro: classifyChemicalDanger(undefined, chemicalName, ''),
+        LinkSDS: linkSDS,
+        Ubicacion: storesList,
+        Tipo: 'Chemical',
+        HazardClasses: undefined,
+      });
+    });
+
+    console.log(`✅ ${chemicals.length} químicos cargados desde MongoDB`);
+    return chemicals;
+  } catch (error) {
+    console.error('Error al cargar desde MongoDB:', error);
+    // Fallback a Excel
+    return loadCombinedData('/ChemicalStores.xlsx', '/Chemicals.xlsx');
+  }
+}
+
+
 // Sheds objetivo a mostrar
 const TARGET_STORES = [
   'Judco Chem Shed',

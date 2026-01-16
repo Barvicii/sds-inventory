@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Chemical, DangerLevel } from '@/types/chemical';
-import { loadCombinedData } from '@/lib/excel';
+import { loadDataFromMongoDB } from '@/lib/excel';
 import ChemicalCard from './ChemicalCard';
 
 interface InventoryListProps {
@@ -28,24 +28,20 @@ export default function InventoryList({ storesUrl, chemicalsUrl, initialData = [
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Cargar datos desde Excel al montar el componente
+  // Cargar datos al montar el componente
   useEffect(() => {
-    if (storesUrl && chemicalsUrl) {
-      loadExcelData();
-    }
-  }, [storesUrl, chemicalsUrl]);
+    loadExcelData();
+  }, []);
 
   /**
-   * Carga ambos Excel y los combina, filtrando por tipo si es necesario
+   * Carga datos desde MongoDB (con fallback a Excel)
    */
   const loadExcelData = async () => {
-    if (!storesUrl || !chemicalsUrl) return;
-
     setLoading(true);
     setError(null);
 
     try {
-      const data = await loadCombinedData(storesUrl, chemicalsUrl);
+      const data = await loadDataFromMongoDB();
       
       // Filtrar por tipo de shed si se especifica
       const filteredData = filterByType

@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import { existsSync } from 'fs';
-import path from 'path';
 import * as XLSX from 'xlsx';
+import clientPromise from '@/lib/mongodb';
+
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
+    
     const formData = await request.formData();
     const file = formData.get('file') as File;
     
@@ -91,74 +93,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create timestamp for backup
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-    const publicDir = path.join(process.cwd(), 'public');
-    
-    // Ensure public directory exists
-    if (!existsSync(publicDir)) {
-      await mkdir(publicDir, { recursive: true });
-    }
+    // Connect to MongoDB
+    const client = await clientPromise;
+    const db = client.db('sds-inventory');
+    const chemicalsCollection = db.collection('chemicals');
+    const uploadsCollection = db.collection('uploads');
 
-    // Backup old file if it exists
-    const oldFilePath = path.join(publicDir, 'ChemicalStores.xlsx');
-    if (existsSync(oldFilePath)) {
-      const backupFilePath = path.join(publicDir, `ChemicalStores_backup_${timestamp}.xlsx`);
-      const oldFile = await import('fs/promises').then(fs => fs.readFile(oldFilePath));
-      await writeFile(backupFilePath, oldFile);
-    }
+    // Get existing chemicals from database
+    const existingChemicals = new Set<string>();
+    const existingDocs = await chemicalsCollection.find({}).toArray();
+    existingDocs.forEach(doc => {
+      existingChemicals.add(doc.name);
+    });
 
-    // Save new file
-    const newFilePath = path.join(publicDir, 'ChemicalStores.xlsx');
-    await writeFile(newFilePath, buffer);
-
-    // Also save with timestamp
-    const timestampedPath = path.join(publicDir, `ChemicalStores_${timestamp}.xlsx`);
-    await writeFile(timestampedPath, buffer);
-
-    // Analyze the data
+    // Process new data
     const chemicals = new Set<string>();
     let totalRows = 0;
     let newChemicals: string[] = [];
+    const chemicalData: any[] = [];
 
-    // Get existing chemicals from the old file
-    let existingChemicals = new Set<string>();
-    if (existsSync(oldFilePath)) {
-      try {
-        const oldWorkbook = XLSX.readFile(oldFilePath);
-        const oldSheet = oldWorkbook.Sheets[oldWorkbook.SheetNames[0]];
-        
-        // Find header row in old file
-        const oldRawData = XLSX.utils.sheet_to_json(oldSheet, { header: 1 });
-        let oldHeaderRowIndex = -1;
-        for (let i = 0; i < Math.min(10, oldRawData.length); i++) {
-          const row = oldRawData[i] as any[];
-          if (row && row.includes('Chemical')) {
-            oldHeaderRowIndex = i;
-            break;
-          }
-        }
-        
-        if (oldHeaderRowIndex !== -1) {
-          const oldRange = XLSX.utils.decode_range(oldSheet['!ref'] || 'A1');
-          oldRange.s.r = oldHeaderRowIndex;
-          const oldAdjustedRef = XLSX.utils.encode_range(oldRange);
-          const oldTempSheet = { ...oldSheet, '!ref': oldAdjustedRef };
-          const oldData = XLSX.utils.sheet_to_json(oldTempSheet);
-          
-          oldData.forEach((row: any) => {
-            const name = row.Chemical;
-            if (name && name !== '(blank)' && !String(name).includes('Total')) {
-              existingChemicals.add(String(name).trim());
-            }
-          });
-        }
-      } catch (error) {
-        console.error('Error reading old file:', error);
-      }
-    }
-
-    // Analyze new data
     data.forEach((row: any) => {
       const name = row.Chemical;
       if (name && name !== '(blank)' && !String(name).includes('Total')) {
@@ -169,12 +122,42 @@ export async function POST(request: NextRequest) {
         if (!existingChemicals.has(chemicalName)) {
           newChemicals.push(chemicalName);
         }
+
+        // Store full row data
+        chemicalData.push({
+          name: chemicalName,
+          store: row.Store || '',
+          stockUnit: row.StockUnit || '',
+          total: row.Total || 0,
+          updatedAt: new Date()
+        });
       }
     });
 
+    // Update chemicals in database
+    // Delete old data
+    await chemicalsCollection.deleteMany({});
+    
+    // Insert new data
+    if (chemicalData.length > 0) {
+      await chemicalsCollection.insertMany(chemicalData);
+    }
+
+    // Save upload history
+    const uploadRecord = {
+      fileName: file.name,
+      fileSize: file.size,
+      uploadDate: new Date(),
+      totalChemicals: chemicals.size,
+      totalRows: totalRows,
+      newChemicals: newChemicals,
+      processedBy: 'admin',
+    };
+    await uploadsCollection.insertOne(uploadRecord);
+
     return NextResponse.json({
       success: true,
-      message: 'Archivo subido y procesado exitosamente',
+      message: 'Archivo subido y procesado exitosamente. Datos guardados en MongoDB.',
       stats: {
         totalChemicals: chemicals.size,
         totalRows: totalRows,
@@ -183,7 +166,7 @@ export async function POST(request: NextRequest) {
         fileName: file.name,
         fileSize: `${(file.size / 1024).toFixed(2)} KB`,
         uploadDate: new Date().toISOString(),
-        backupCreated: existsSync(oldFilePath)
+        savedToDatabase: true
       }
     });
 
