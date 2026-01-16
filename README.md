@@ -1,26 +1,44 @@
-# Sistema de Inventario de Riesgo Químico - Craigmore Farming
+# Sistema de Inventario de Químicos - Craigmore Farming
 
-Sistema profesional con Next.js para gestión de inventario químico con enfoque en respuesta a emergencias. Separado en Chemical Sheds y Fertilizer Sheds.
+Sistema de gestión de inventario químico con acceso a hojas de seguridad (SDS) y actualización semanal sin edición de código.
 
 ## 🚀 Características Principales
 
-- ✅ **Página de Selección**: Landing page con QR que pregunta Chemical o Fertilizer
-- ✅ **Dos Secciones Separadas**: Chemical Shed y Fertilizer Shed en ubicaciones diferentes
-- ✅ **Lectura de 2 Excel**: Stores (cantidades) + Chemicals (HazardClasses)
-- ✅ **Agrupación Inteligente**: Suma automática de químicos del mismo nombre
+- ✅ **Inventario en Tiempo Real**: Visualiza stock de todos los químicos por ubicación
+- ✅ **Hojas de Seguridad**: Acceso directo a 204 SDSs de Horticentre
+- ✅ **Actualización Semanal**: Sube archivos Excel sin tocar código
+- ✅ **Detección Automática**: Identifica químicos nuevos automáticamente
+- ✅ **Backups Automáticos**: Crea respaldos antes de cada actualización
+- ✅ **Sistema de Emergencia**: Información crítica para llamadas al 111
+- ✅ **Dos Secciones Separadas**: Chemical Shed y Fertilizer Shed
+- ✅ **Agrupación Inteligente**: Suma automática por químico y ubicación
 - ✅ **Clasificación por HazardClasses**: Usa clasificación oficial del Excel
-- ✅ **Cantidad Destacada**: Campo muy visible para servicios de emergencia
-- ✅ **Diseño Responsivo**: Optimizado para escanear QR en móviles
 
 ## 📱 Flujo de Uso
 
-1. **Escanear QR** → Página de inicio
+### Para Consultar Inventario
+
+1. **Escanear QR** → Página de inicio (https://sds-inventory.vercel.app)
 2. **Seleccionar tipo**: 
    - 🔴 **Chemical Shed** (Judco & Patutahi)
    - 🟢 **Fertilizer Shed** (Judco & Patutahi)
 3. **Ver inventario** filtrado por tipo
-4. **Buscar/Filtrar** por nivel de peligro
-5. **Llamar 111** si es emergencia
+4. **Buscar/Filtrar** por nombre o nivel de peligro
+5. **Hacer clic en "Ver SDS"** para abrir hoja de seguridad
+6. **Llamar 111** si es emergencia
+
+### Para Actualizar Inventario (Semanal) ⭐ NUEVO
+
+1. En la página principal, haz clic en **"Update Inventory"**
+2. Arrastra el archivo `ChemicalStores.xlsx` o haz clic para seleccionarlo
+3. Espera a que se procese (verás un resumen con):
+   - Total de químicos
+   - Químicos nuevos detectados
+   - Tamaño del archivo
+   - Confirmación de backup
+4. Serás redirigido automáticamente al inventario actualizado
+
+**Nota**: Ya NO necesitas editar código ni hacer commits. Solo subes el archivo Excel desde la web.
 
 ## 📊 Estructura de Datos
 
