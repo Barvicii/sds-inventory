@@ -67,11 +67,6 @@ export default function AdminPage() {
       }
 
       setSuccess(data.stats);
-      
-      // Reload the page after 3 seconds to show updated data
-      setTimeout(() => {
-        window.location.href = '/';
-      }, 3000);
 
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error desconocido');
@@ -86,23 +81,23 @@ export default function AdminPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Panel de Administración
+            Administration Panel
           </h1>
           <p className="text-gray-600">
-            Actualiza el inventario de químicos subiendo el archivo Excel
+            Update chemical inventory by uploading the Excel file
           </p>
           <Link 
             href="/"
             className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium"
           >
-            ← Volver al inventario
+            ← Back to inventory
           </Link>
         </div>
 
         {/* Upload Card */}
         <div className="bg-white rounded-lg shadow-xl p-8 mb-6">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            📤 Subir ChemicalStores.xlsx
+            📤 Upload ChemicalStores.xlsx
           </h2>
           
           <div className="mb-6">
@@ -115,15 +110,15 @@ export default function AdminPage() {
                 </div>
                 <div className="ml-3">
                   <p className="text-sm text-blue-700">
-                    <strong>Instrucciones:</strong>
+                    <strong>Instructions:</strong>
                   </p>
                   <ul className="text-sm text-blue-700 list-disc list-inside mt-2 space-y-1">
-                    <li>El archivo debe ser formato Excel (.xlsx)</li>
-                    <li>Debe contener la columna "Chemical"</li>
-                    <li>Debe tener columnas "Store", "StockUnit" o "Total"</li>
-                    <li>Los headers pueden estar en cualquier fila (se detectan automáticamente)</li>
-                    <li>Se creará un backup automático del archivo anterior</li>
-                    <li>Los nuevos químicos se detectarán automáticamente</li>
+                    <li>File must be Excel format (.xlsx)</li>
+                    <li>Must contain "Chemical" column</li>
+                    <li>Must have "Store", "StockUnit" or "Total" columns</li>
+                    <li>Headers can be in any row (automatically detected)</li>
+                    <li>Only shows Judco and Patutahi sheds (Chem/Fert)</li>
+                    <li>Chemicals with zero stock are automatically filtered out</li>
                   </ul>
                 </div>
               </div>
@@ -168,13 +163,13 @@ export default function AdminPage() {
                   />
                 </svg>
                 <p className="text-lg font-medium text-gray-700 mb-2">
-                  {uploading ? 'Subiendo archivo...' : 'Arrastra el archivo aquí'}
+                  {uploading ? 'Uploading file...' : 'Drag file here'}
                 </p>
                 <p className="text-sm text-gray-500">
-                  o haz clic para seleccionar
+                  or click to select
                 </p>
                 <p className="text-xs text-gray-400 mt-2">
-                  Formato: Excel (.xlsx, .xls)
+                  Format: Excel (.xlsx, .xls)
                 </p>
               </label>
             </div>
@@ -184,7 +179,7 @@ export default function AdminPage() {
           {uploading && (
             <div className="flex items-center justify-center p-4 bg-blue-50 rounded-lg">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mr-3"></div>
-              <span className="text-blue-700 font-medium">Procesando archivo...</span>
+              <span className="text-blue-700 font-medium">Processing file...</span>
             </div>
           )}
 
@@ -217,10 +212,10 @@ export default function AdminPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-sm text-green-700 font-medium">
-                      ✅ Archivo procesado exitosamente
+                      ✅ File processed successfully
                     </p>
                     <p className="text-xs text-green-600 mt-1">
-                      Redirigiendo al inventario en 3 segundos...
+                      Data saved to database
                     </p>
                   </div>
                 </div>
@@ -228,23 +223,23 @@ export default function AdminPage() {
 
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                  📊 Resumen de la actualización
+                  📊 Update Summary
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded shadow-sm">
-                    <p className="text-sm text-gray-600">Total de químicos</p>
+                    <p className="text-sm text-gray-600">Total Chemicals</p>
                     <p className="text-2xl font-bold text-blue-600">{success.totalChemicals}</p>
                   </div>
                   <div className="bg-white p-4 rounded shadow-sm">
-                    <p className="text-sm text-gray-600">Filas procesadas</p>
+                    <p className="text-sm text-gray-600">Rows Processed</p>
                     <p className="text-2xl font-bold text-blue-600">{success.totalRows}</p>
                   </div>
                   <div className="bg-white p-4 rounded shadow-sm">
-                    <p className="text-sm text-gray-600">Químicos nuevos</p>
+                    <p className="text-sm text-gray-600">New Chemicals</p>
                     <p className="text-2xl font-bold text-green-600">{success.newChemicals}</p>
                   </div>
                   <div className="bg-white p-4 rounded shadow-sm">
-                    <p className="text-sm text-gray-600">Tamaño del archivo</p>
+                    <p className="text-sm text-gray-600">File Size</p>
                     <p className="text-2xl font-bold text-gray-700">{success.fileSize}</p>
                   </div>
                 </div>
@@ -252,7 +247,7 @@ export default function AdminPage() {
                 {success.newChemicals > 0 && (
                   <div className="mt-4 p-4 bg-yellow-50 rounded">
                     <p className="text-sm font-medium text-yellow-800 mb-2">
-                      🆕 Nuevos químicos detectados:
+                      🆕 New chemicals detected:
                     </p>
                     <ul className="text-sm text-yellow-700 list-disc list-inside space-y-1 max-h-32 overflow-y-auto">
                       {success.newChemicalsList.map((chemical, idx) => (
@@ -262,17 +257,9 @@ export default function AdminPage() {
                   </div>
                 )}
 
-                {success.backupCreated && (
-                  <div className="mt-4 p-3 bg-blue-50 rounded">
-                    <p className="text-sm text-blue-700">
-                      💾 Se creó un backup del archivo anterior
-                    </p>
-                  </div>
-                )}
-
                 <div className="mt-4 text-xs text-gray-500">
-                  <p>Archivo: {success.fileName}</p>
-                  <p>Fecha de subida: {new Date(success.uploadDate).toLocaleString('es-NZ')}</p>
+                  <p>File: {success.fileName}</p>
+                  <p>Upload date: {new Date(success.uploadDate).toLocaleString('en-NZ')}</p>
                 </div>
               </div>
             </div>
@@ -282,24 +269,24 @@ export default function AdminPage() {
         {/* Help Section */}
         <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">
-            ❓ Preguntas frecuentes
+            ❓ Frequently Asked Questions
           </h3>
           <div className="space-y-3 text-sm text-gray-600">
             <div>
-              <p className="font-medium text-gray-800">¿Con qué frecuencia debo actualizar?</p>
-              <p>Se recomienda actualizar el inventario semanalmente o cuando haya cambios significativos en el stock.</p>
+              <p className="font-medium text-gray-800">How often should I update?</p>
+              <p>It's recommended to update the inventory weekly or when there are significant changes in stock.</p>
             </div>
             <div>
-              <p className="font-medium text-gray-800">¿Qué pasa si subo un archivo incorrecto?</p>
-              <p>No te preocupes, se crea un backup automático. Puedes restaurar el archivo anterior si es necesario.</p>
+              <p className="font-medium text-gray-800">What if I upload the wrong file?</p>
+              <p>Don't worry, you can upload the correct file again. The system will replace the data in the database.</p>
             </div>
             <div>
-              <p className="font-medium text-gray-800">¿Los nuevos químicos aparecen automáticamente?</p>
-              <p>Sí, el sistema detecta automáticamente químicos nuevos y los agrega al inventario.</p>
+              <p className="font-medium text-gray-800">Do new chemicals appear automatically?</p>
+              <p>Yes, the system automatically detects new chemicals and adds them to the inventory.</p>
             </div>
             <div>
-              <p className="font-medium text-gray-800">¿Se actualizan los links de SDS automáticamente?</p>
-              <p>Los químicos nuevos intentarán encontrar su SDS en Horticentre automáticamente usando el sistema de mapeo inteligente.</p>
+              <p className="font-medium text-gray-800">Are SDS links updated automatically?</p>
+              <p>New chemicals will attempt to find their SDS on Horticentre automatically using the intelligent mapping system.</p>
             </div>
           </div>
         </div>
