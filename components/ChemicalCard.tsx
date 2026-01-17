@@ -42,25 +42,32 @@ export default function ChemicalCard({ chemical }: ChemicalCardProps) {
         {/* Nombre del químico */}
         <h3 className="font-bold text-gray-800 text-xl mt-1">{chemical.Nombre}</h3>
 
+        {/* Activo (Ingrediente activo) */}
+        {chemical.Activo && (
+          <p className="text-sm text-gray-600 mt-1">
+            <i className="fas fa-flask text-gray-400 mr-1"></i>
+            {chemical.Activo}
+          </p>
+        )}
+
         {/* Clasificación de peligro (HazardClasses) - IMPORTANTE PARA EMERGENCIAS */}
         {chemical.HazardClasses && (
-          <div className="mt-2 mb-1">
-            <div className={`text-xs font-bold px-3 py-2 rounded-lg border-2 ${
+          <div className="mt-2">
+            <div className={`text-xs font-semibold px-3 py-2 rounded-lg border ${
               isHighRisk 
-                ? 'bg-red-50 border-red-300 text-red-900' 
-                : 'bg-orange-50 border-orange-300 text-orange-900'
+                ? 'bg-red-50 border-red-400 text-red-900' 
+                : chemical.Peligro === 'medium'
+                ? 'bg-orange-50 border-orange-400 text-orange-900'
+                : 'bg-yellow-50 border-yellow-400 text-yellow-900'
             }`}>
               <i className="fas fa-exclamation-triangle mr-2"></i>
-              <span className="uppercase tracking-wide">Classification:</span> {chemical.HazardClasses}
+              {chemical.HazardClasses}
             </div>
           </div>
         )}
 
         {/* Detalles adicionales */}
         <div className="flex flex-wrap gap-2 mt-2 text-sm text-gray-600">
-          <span className="bg-gray-50 px-2 py-1 rounded border border-gray-100">
-            <i className="fas fa-flask text-gray-400 mr-1"></i> {chemical.Activo}
-          </span>
           {chemical.Ubicacion && (
             <span className="bg-gray-50 px-2 py-1 rounded border border-gray-100">
               <i className="fas fa-map-marker-alt text-gray-400 mr-1"></i> {chemical.Ubicacion}
