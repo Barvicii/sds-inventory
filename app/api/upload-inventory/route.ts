@@ -5,9 +5,41 @@ import clientPromise from '@/lib/mongodb';
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
+/**
+ * Load Chemicals reference data from MongoDB
+ */
+async function loadChemicalsDataFromMongo(db: any): Promise<Map<string, any>> {
+  try {
+    const chemicalsRefCollection = db.collection('chemicalsReference');
+    const refData = await chemicalsRefCollection.find({}).toArray();
+    
+    const chemicalsMap = new Map<string, any>();
+    refData.forEach((row: any) => {
+      if (row.name) {
+        chemicalsMap.set(row.name, {
+          hazardClasses: row.hazardClasses || '',
+          activeIngredient: row.activeIngredient || '',
+          type: row.type || 'Chemical'
+        });
+      }
+    });
+    
+    console.log(`📚 Loaded ${chemicalsMap.size} chemicals from MongoDB reference`);
+    if (chemicalsMap.size > 0) {
+      const samples = Array.from(chemicalsMap.entries()).slice(0, 3);
+      console.log(`   Examples:`, samples.map(([name, data]) => `${name} -> ${data.hazardClasses}`));
+    } else {
+      console.warn(`⚠️ No reference data found in MongoDB. Run POST /api/upload-chemicals-reference to populate.`);
+    }
+    return chemicalsMap;
+  } catch (error) {
+    console.error('⚠️ Error loading Chemicals reference from MongoDB:', error);
+    return new Map();
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
-    
     const formData = await request.formData();
     const file = formData.get('file') as File;
     
@@ -126,6 +158,9 @@ export async function POST(request: NextRequest) {
     const chemicalsCollection = db.collection('chemicals');
     const uploadsCollection = db.collection('uploads');
 
+    // Load reference data from MongoDB
+    const chemicalsRef = await loadChemicalsDataFromMongo(db);
+
     // Target stores - only these will be saved
     const TARGET_STORES = [
       'Judco Chem Shed',
@@ -147,6 +182,7 @@ export async function POST(request: NextRequest) {
     let newChemicals: string[] = [];
     const chemicalData: any[] = [];
     let filteredOutCount = 0;
+    let matchedWithHazardData = 0;
 
     data.forEach((row: any, index: number) => {
       const name = row.Chemical;
@@ -179,12 +215,21 @@ export async function POST(request: NextRequest) {
           newChemicals.push(chemicalName);
         }
 
+        // Lookup hazard information from reference file
+        const refData = chemicalsRef.get(chemicalName);
+        if (refData?.hazardClasses) {
+          matchedWithHazardData++;
+        }
+
         // Store full row data - try multiple possible column names
         chemicalData.push({
           name: chemicalName,
           store: store,
           stockUnit: row.StockUnit || row['Stock Unit'] || row.stockUnit || '',
           total: quantity,
+          hazardClasses: refData?.hazardClasses || '',
+          activeIngredient: refData?.activeIngredient || row.ActiveIngredient || '',
+          type: refData?.type || row.ChemicalType || 'Chemical',
           updatedAt: new Date()
         });
       }
@@ -198,6 +243,7 @@ export async function POST(request: NextRequest) {
     // Insert new data
     if (chemicalData.length > 0) {
       console.log(`💾 Inserting ${chemicalData.length} new chemical records...`);
+      console.log(`🔗 ${matchedWithHazardData} chemicals matched with hazard classification data`);
       const insertResult = await chemicalsCollection.insertMany(chemicalData);
       console.log(`✅ Inserted ${insertResult.insertedCount} documents to MongoDB`);
     } else {
@@ -220,6 +266,7 @@ export async function POST(request: NextRequest) {
     console.log(`📈 Upload Summary:`);
     console.log(`   - Total chemicals: ${chemicals.size}`);
     console.log(`   - Total rows: ${totalRows}`);
+    console.log(`   - Matched with hazard data: ${matchedWithHazardData} of ${totalRows} (${Math.round(matchedWithHazardData/totalRows*100)}%)`);
     console.log(`   - New chemicals: ${newChemicals.length}`);
     console.log(`   - Filtered out (other stores): ${filteredOutCount}`);
     console.log(`   - File: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`);

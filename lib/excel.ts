@@ -64,13 +64,13 @@ export async function loadDataFromMongoDB(): Promise<Chemical[]> {
 
       chemicals.push({
         Nombre: chemicalName,
-        Activo: '',
+        Activo: group.firstEntry.activeIngredient || '',
         Cantidad: cantidadFormateada,
-        Peligro: classifyChemicalDanger(undefined, chemicalName, ''),
+        Peligro: classifyChemicalDanger(group.firstEntry.hazardClasses, chemicalName, group.firstEntry.activeIngredient || ''),
         LinkSDS: linkSDS,
         Ubicacion: storesList,
-        Tipo: 'Chemical',
-        HazardClasses: undefined,
+        Tipo: group.firstEntry.type || 'Chemical',
+        HazardClasses: group.firstEntry.hazardClasses,
       });
     });
 
