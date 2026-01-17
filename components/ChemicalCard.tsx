@@ -42,28 +42,30 @@ export default function ChemicalCard({ chemical }: ChemicalCardProps) {
         {/* Nombre del químico */}
         <h3 className="font-bold text-gray-800 text-xl mt-1">{chemical.Nombre}</h3>
 
+        {/* Clasificación de peligro (HazardClasses) - Siempre visible si existe */}
+        {chemical.HazardClasses && chemical.HazardClasses.trim() !== '' && (
+          <div className="mt-1 mb-2">
+            <p className={`text-xs font-semibold px-2 py-1 rounded inline-block ${
+              chemical.HazardClasses.toLowerCase().includes('class 9') || chemical.HazardClasses.toLowerCase().includes('9.1')
+                ? 'bg-purple-100 text-purple-900 border border-purple-300'
+                : isHighRisk 
+                ? 'bg-red-100 text-red-900 border border-red-300' 
+                : chemical.Peligro === 'medium'
+                ? 'bg-orange-100 text-orange-900 border border-orange-300'
+                : 'bg-yellow-100 text-yellow-900 border border-yellow-300'
+            }`}>
+              <i className="fas fa-exclamation-triangle mr-1"></i>
+              {chemical.HazardClasses}
+            </p>
+          </div>
+        )}
+
         {/* Activo (Ingrediente activo) */}
         {chemical.Activo && (
           <p className="text-sm text-gray-600 mt-1">
             <i className="fas fa-flask text-gray-400 mr-1"></i>
             {chemical.Activo}
           </p>
-        )}
-
-        {/* Clasificación de peligro (HazardClasses) - IMPORTANTE PARA EMERGENCIAS */}
-        {chemical.HazardClasses && (
-          <div className="mt-2">
-            <div className={`text-xs font-semibold px-3 py-2 rounded-lg border ${
-              isHighRisk 
-                ? 'bg-red-50 border-red-400 text-red-900' 
-                : chemical.Peligro === 'medium'
-                ? 'bg-orange-50 border-orange-400 text-orange-900'
-                : 'bg-yellow-50 border-yellow-400 text-yellow-900'
-            }`}>
-              <i className="fas fa-exclamation-triangle mr-2"></i>
-              {chemical.HazardClasses}
-            </div>
-          </div>
         )}
 
         {/* Detalles adicionales */}
